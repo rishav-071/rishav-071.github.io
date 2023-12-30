@@ -25,6 +25,9 @@
 #nav{
     background: linear-gradient(#000000,transparent);
 }
+#nav-nav{
+    text-shadow: 0px 0px 10px red;
+}
 .navbar-nav{
     display: flex;
     width: 50vw;
@@ -40,6 +43,9 @@
 .dropdown-item:hover{
     background-color: rgba(84, 79, 79, 0.623);
     border-radius: 20px;
+}
+.dropdown-menu{
+    background-color: rgba(38, 37, 37, 0.793);
 }
 #logo-text{
     height: 100vh;
