@@ -36,10 +36,6 @@
     right: 0vw;
     flex-wrap: nowrap;
 }
-.navbar-toggler{
-    /* border-color: white; */
-    color: white;
-}
 .navbar-brand{
     position: relative;
     left: 2vw;
