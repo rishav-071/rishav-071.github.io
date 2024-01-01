@@ -90,9 +90,6 @@
     align-items: center;
     inset: 0;
     grid-column: 1/-1;
-    animation: logos-animation linear;
-    animation-timeline: view();
-    animation-range: exit;
 }
 #logos{
     background-color: transparent;
@@ -132,6 +129,13 @@
     }
     #log{
         width: 45vw;
+    }
+}
+@supports(animation-timeline: view()){
+    #logo-text{
+        animation: logos-animation linear;
+        animation-timeline: view();
+        animation-range: exit;
     }
 }
 #description{
