@@ -82,6 +82,44 @@
 .dropdown-menu{
     background-color: rgba(38, 37, 37, 0.793);
 }
+#bg-logo{
+    background-color: transparent;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+    opacity: 0;
+    animation: bg-logo-fade linear forwards;
+    animation-timeline: scroll();
+}
+@media(max-width:500px){
+    #logos{
+        padding-right: 10vw;
+    }
+    #x{
+        font-size: 6vw;
+    }
+    .logf{
+        width: 30vw;
+    }
+    #log{
+        width: 45vw;
+    }
+}
+@keyframes bg-logo-fade{
+    0%{
+        opacity: 0;
+    }
+    20%{
+        opacity: 0.3;
+    }
+    100%{
+        opacity: 0.3;
+    }
+}
 #logo-text{
     height: 100vh;
     display: flex;
@@ -91,13 +129,13 @@
     inset: 0;
     grid-column: 1/-1;
 }
-/* @media(min-width:600px){
+@media(min-width:600px){
     #logo-text{
         animation: logos-animation linear;
         animation-timeline: view();
         animation-range: exit;
     }
-} */
+}
 #logos{
     background-color: transparent;
     display: flex;
@@ -123,20 +161,6 @@
 }
 #log{
     width: 30vw;
-}
-@media(max-width:500px){
-    #logos{
-        padding-right: 10vw;
-    }
-    #x{
-        font-size: 6vw;
-    }
-    .logf{
-        width: 30vw;
-    }
-    #log{
-        width: 45vw;
-    }
 }
 #description{
     display: flex;
