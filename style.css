@@ -31,6 +31,36 @@
     height: 0vh;
     opacity: 0;
 }
+#date{
+    font-size: 25px;
+    background-color: transparent;
+    position: absolute;
+    z-index: 0;
+    bottom: 10px;
+    right: 10px;
+    opacity: 0.5;
+}
+#iiitbbsr{
+    font-size: 30px;
+    transform: rotate(-90deg);
+    position: absolute;
+    top: calc(300px + 120vh);
+    left: -170px;
+    opacity: 0.6;
+    z-index: -1;
+}
+@media(max-width:600px){
+    #date{
+        font-size: 15px;
+        bottom: 10px;
+        right: 10px;
+    }
+    #iiitbbsr{
+        font-size: 20px;
+        top: calc(240px + 100vh);
+        left: -100px;
+    }
+}
 #bg-black{
     background-color: black;
     height: 100vh;
@@ -53,13 +83,6 @@
     background: linear-gradient(#000000 30%,transparent 100%);
     font-size: 20px;
 }
-/* #nav-nav{
-    text-shadow: 0px 0px 10px white;
-    -webkit-text-stroke-color: black;
-    -webkit-text-fill-color: white;
-    -webkit-text-stroke-width: calc(1px /1);
-    font-size: 20px;
-} */
 .navbar-nav{
     display: flex;
     width: 50vw;
@@ -151,7 +174,7 @@
         align-items: center;
         z-index: -1;
         opacity: 0;
-        animation: bg-logo-fade linear forwards;
+        animation: bg-logo-fade linear;
         animation-timeline: scroll();
     }
 }
