@@ -31,15 +31,6 @@
     height: 0vh;
     opacity: 0;
 }
-#date{
-    font-size: 25px;
-    background-color: transparent;
-    position: absolute;
-    z-index: 0;
-    bottom: 10px;
-    right: 10px;
-    opacity: 0.5;
-}
 #iiitbbsr{
     font-size: 30px;
     transform: rotate(-90deg);
@@ -50,11 +41,6 @@
     z-index: -1;
 }
 @media(max-width:600px){
-    #date{
-        font-size: 15px;
-        bottom: 10px;
-        right: 10px;
-    }
     #iiitbbsr{
         font-size: 20px;
         top: calc(240px + 100vh);
@@ -211,6 +197,7 @@
     align-items: flex-start;
     padding: 0vh 5vw 70px 5vw;
     font-size: 3vw;
+    position: relative;
 }
 #first-description{
     display: flex;
@@ -219,6 +206,22 @@
 }
 #logo-description{
     padding: 2vw 5px;
+}
+#date{
+    font-size: 25px;
+    background-color: transparent;
+    position: absolute;
+    z-index: 0;
+    bottom: 10px;
+    right: 10px;
+    opacity: 0.5;
+}
+@media(max-width:600px){
+    #date{
+        font-size: 15px;
+        bottom: 10px;
+        right: 10px;
+    }
 }
 strong{
     font-size: 60px;
