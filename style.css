@@ -13,16 +13,88 @@
     right: 0px;
     width: 10px;
     height: 10px;
-    border-radius: 20px;
+    border-radius: 50%;
     background-color: white;
     box-shadow: 0px 0px 0px white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
     animation: scroll-watcher linear;
     animation-timeline: scroll();
 }
 @keyframes scroll-watcher{
     to{
-        box-shadow: 0px 0px 100px white;
-        top: calc(100vh - 10px);
+        box-shadow: 0px 0px 20px white;
+        top: calc(100vh - 20px);
+    }
+}
+#hue{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    background: conic-gradient(blue ,aqua , green, yellow, orange, red, blue);
+    animation: rotate linear;
+    animation-timeline: scroll();
+}
+@keyframes rotate{
+    20%{
+        transform: rotate(360deg);
+    }
+    40%{
+        transform: rotate(720deg);
+    }
+    60%{
+        transform: rotate(1080deg);
+    }
+    80%{
+        transform: rotate(1440deg);
+    }
+    100%{
+        transform: rotate(1800deg);
+    }
+}
+.ring{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+}
+#ring1{
+    border-bottom: 2px solid blue;
+    animation: rotate1 1s linear infinite;
+}
+@keyframes rotate1{
+    from{
+        transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+    }
+    to{
+        transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+    }
+}
+#ring2{
+    border-right: 2px solid red;
+    animation: rotate2 1s linear infinite;
+}
+@keyframes rotate2{
+    from{
+        transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+    }
+    to{
+        transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+    }
+}
+#ring3{
+    border-top: 2px solid green;
+    animation: rotate3 1s linear infinite;
+}
+@keyframes rotate3{
+    from{
+        transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+    }
+    to{
+        transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
     }
 }
 #bg-logo{
@@ -79,7 +151,7 @@
 }
 @media(max-width:575px){
     .navbar-nav{
-        background-color: rgba(56, 58, 58, 0.808);
+        background-color: rgba(38, 39, 39, 0.808);
         border-radius: 10px;
         width: 160px;
     }
@@ -106,7 +178,7 @@
     border-radius: 20px;
 }
 .dropdown-menu{
-    background-color: rgba(38, 37, 37, 0.793);
+    background-color: rgba(20, 20, 20, 0.793);
 }
 @media(max-width:500px){
     #logos{
@@ -122,15 +194,13 @@
         width: 45vw;
     }
 }
-@keyframes bg-logo-fade{
-    0%{
+@keyframes logos-animation{
+    70%{
         opacity: 0;
     }
-    20%{
-        opacity: 0.3;
-    }
     100%{
-        opacity: 0.3;
+        scale: 8;
+        opacity: 0;
     }
 }
 #logo-text{
@@ -147,6 +217,17 @@
         animation: logos-animation linear;
         animation-timeline: view();
         animation-range: exit;
+    }
+}
+@keyframes bg-logo-fade{
+    0%{
+        opacity: 0;
+    }
+    20%{
+        opacity: 0.3;
+    }
+    100%{
+        opacity: 0.3;
     }
 }
 @supports(animation-timeline: scroll()){
@@ -169,15 +250,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-}
-@keyframes logos-animation{
-    70%{
-        opacity: 0;
-    }
-    100%{
-        scale: 8;
-        opacity: 0;
-    }
 }
 #x{
     font-size: 3vw;
@@ -212,9 +284,9 @@
     background-color: transparent;
     position: absolute;
     z-index: 0;
-    bottom: 10px;
-    right: 10px;
-    opacity: 0.5;
+    bottom: 0px;
+    right: 0px;
+    opacity: 0.8;
 }
 @media(max-width:600px){
     #date{
@@ -224,7 +296,7 @@
     }
 }
 strong{
-    font-size: 60px;
+    font-size: 30px;
 }
 #days{
     padding: 30px 0px 0px 2vw;
@@ -233,12 +305,12 @@ strong{
     font-weight: 100;
     font-size: larger;
 }
-@media(min-width:1500px){
+@media(min-width:900px){
     #description{
         font-size: 1.5vw;
     }
     strong{
-        font-size: 30px;
+        font-size: 60px;
     }
 }
 @media(max-width:500px){
@@ -260,13 +332,65 @@ strong{
     justify-content: center;
     flex-wrap: wrap;
 }
+@keyframes poster-animation{
+    0%{
+        opacity: 0;
+        scale: 0.7;
+    }
+    20%{
+        opacity: 1;
+        scale: 1;
+    }
+    70%{
+        opacity: 1;
+        scale: 1;
+    }
+    100%{
+        opacity: 0;
+        scale: 0.7;
+    }
+}
+@keyframes invitation-animation{
+    0%{
+        opacity: 0;
+        scale: 0;
+    }
+    45%{
+        opacity: 1;
+        scale: 1;
+    }
+    70%{
+        opacity: 1;
+        scale: 1;
+    }
+    70%{
+        opacity: 1;
+        scale: 1;
+    }
+}
 .poster{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 30px;
+    padding: 30px 70px;
     height: 580px;
+}
+@supports(animation-timeline: view()){
+    .poster{
+        animation: poster-animation linear;
+        animation-timeline: view();
+    }
+    #invitation{
+        animation: invitation-animation linear;
+        animation-timeline: view();
+        
+    }
+}
+@media(max-width:1000px){
+    .poster{
+        padding: 30px 40px;
+    }
 }
 a{
     text-decoration: none;
